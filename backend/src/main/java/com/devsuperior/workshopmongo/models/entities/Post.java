@@ -11,7 +11,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-@Document(collation = "posts")
+@Document(collection="posts")
 public class Post implements Serializable {
     private static final long serialVersionUID = 1L;
 

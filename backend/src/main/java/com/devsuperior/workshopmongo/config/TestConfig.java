@@ -14,7 +14,6 @@ import javax.annotation.PostConstruct;
 import java.time.Instant;
 import java.util.Arrays;
 
-
 @Configuration
 @Profile("test")
 public class TestConfig {

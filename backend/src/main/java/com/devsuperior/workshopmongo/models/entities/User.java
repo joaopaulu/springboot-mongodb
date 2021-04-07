@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-@Document(collation = "users")
+@Document(collection="users")
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
