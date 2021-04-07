@@ -7,4 +7,6 @@ import java.util.List;
 public interface IUserService {
     List<UserDTO> findAll();
 
+    UserDTO findById(String id);
+
 }

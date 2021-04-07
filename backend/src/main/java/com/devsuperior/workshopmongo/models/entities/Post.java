@@ -2,7 +2,6 @@ package com.devsuperior.workshopmongo.models.entities;
 
 import com.devsuperior.workshopmongo.models.embedded.Author;
 import com.devsuperior.workshopmongo.models.embedded.Comment;
-import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
