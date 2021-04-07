@@ -34,4 +34,17 @@ public class UserService implements IUserService {
         return new UserDTO(entity);
     }
 
+    @Override
+    public UserDTO insert(UserDTO dto){
+        User entity = new User();
+        copyDtoToEntity(dto, entity);
+        entity = repository.insert(entity);
+        return new UserDTO(entity);
+    }
+
+    private void copyDtoToEntity(UserDTO dto, User entity){
+        entity.setName(dto.getName());
+        entity.setEmail(dto.getEmail());
+    }
+
 }
