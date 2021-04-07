@@ -2,11 +2,16 @@ package com.devsuperior.workshopmongo.models.embedded;
 
 import com.devsuperior.workshopmongo.models.entities.User;
 
-public class Author {
+import java.io.Serializable;
+
+public class Author implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String id;
     private String name;
 
-    public Author(){ }
+    public Author() {
+    }
 
     public Author(String id, String name) {
         this.id = id;
