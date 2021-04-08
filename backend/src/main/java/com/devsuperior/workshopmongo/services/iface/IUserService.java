@@ -10,4 +10,6 @@ public interface IUserService {
     UserDTO findById(String id);
 
     UserDTO insert(UserDTO dto);
+
+    UserDTO update(String id, UserDTO dto);
 }
