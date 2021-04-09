@@ -31,4 +31,11 @@ public class PostService implements IPostService {
         Optional<Post> result = repository.findById(id);
         return result.orElseThrow(() -> new ResourceNotFoundException("Objeto não encontrado"));
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<PostDTO> findByTitle(String text){
+        List<Post> list = repository.findByTitleContainingIgnoreCase(text);
+        return list.stream().map(PostDTO::new).collect(Collectors.toList());
+    }
 }
