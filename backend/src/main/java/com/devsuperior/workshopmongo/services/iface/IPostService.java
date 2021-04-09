@@ -10,4 +10,7 @@ public interface IPostService {
     PostDTO findById(String id);
 
     List<PostDTO> findByTitle(String text);
+
+    @Transactional(readOnly = true)
+    List<PostDTO> fullSearch(String text, String start, String end);
 }
