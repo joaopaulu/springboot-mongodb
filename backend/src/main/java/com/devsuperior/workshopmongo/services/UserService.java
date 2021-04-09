@@ -49,6 +49,12 @@ public class UserService implements IUserService {
         return new UserDTO(entity);
     }
 
+    @Override
+    public void delete(String id){
+        getEntityById(id);
+        repository.deleteById(id);
+    }
+
     private User getEntityById(String id) {
         Optional<User> result = repository.findById(id);
         return result.orElseThrow(() -> new ResourceNotFoundException("Objeto não encontrado"));
