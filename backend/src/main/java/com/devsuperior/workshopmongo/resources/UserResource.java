@@ -1,5 +1,6 @@
 package com.devsuperior.workshopmongo.resources;
 
+import com.devsuperior.workshopmongo.models.dto.PostDTO;
 import com.devsuperior.workshopmongo.models.dto.UserDTO;
 import com.devsuperior.workshopmongo.services.iface.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,5 +48,11 @@ public class UserResource {
     public ResponseEntity<UserDTO> delete(@PathVariable String id){
         service.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping(value = "/{id}/posts")
+    public ResponseEntity<List<PostDTO>> getUserPosts(@PathVariable String id) {
+        List<PostDTO> list = service.getUserPosts(id);
+        return ResponseEntity.ok().body(list);
     }
 }
